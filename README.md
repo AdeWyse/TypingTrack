@@ -11,7 +11,7 @@ Working on it...
 ### Develpment
 For this project I'm using:
 * Php Storm
-* AngularJs
+* Angular
 * Html
 * CSS
 * Javascipt
