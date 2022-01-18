@@ -1,27 +1,21 @@
-# TypingTrack
+# Typing Track
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+This project is a single page application (SPA) using AngularJS. The aim is to create an app that tracks
+how many words the users can type in the specified window time. Then present the results on an animated graphic using te wpm (words per minute) unit.
+With multiple runs of the same user on the same browser the date and graphics will become more precise.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Working on it...
 
-## Code scaffolding
+### Develpment
+For this project I'm using:
+* Php Storm
+* AngularJs
+* Html
+* CSS
+* Javascipt
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Information will be added as needed
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Very lazy layout prototypes are in the view1 and view2 pngs.

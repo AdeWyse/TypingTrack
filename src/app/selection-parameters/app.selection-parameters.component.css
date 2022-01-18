@@ -40,11 +40,9 @@
     color: var(--textL);
 }
 
-.dropdown{
-    position: relative;
-    display: inline-block;
+#first{
+    display: none;
 }
-
 .dropdown-btn{
     background-color: var(--header);
     text-align: center;
@@ -59,16 +57,9 @@
     border: none;
     margin: 0;
 }
-
-.dropdown-btn:active{
-    border: none;
-    box-shadow: 0 2px 5px 0 var(--background);
-}
-
-.dropdown-content{
-    display: none;
-    position: absolute;
+select option{
     background-color: var(--card-interaction);
+    color: var(--header);
     box-shadow: 2px 2px 5px 0 var(--background);
     width: 100%;
     margin-top: 1em;
@@ -76,28 +67,8 @@
     margin-left: 0;
 }
 
-.dropdown-btn:hover{
-    cursor: pointer;
-}
-
-.dropdown-btn:hover .dropdown-content{
-    display: block;
-    cursor: pointer;
-}
-
-.dropdown-content p{
-    color: var(--textD);
-    font-size: 16px;
-    padding: 2em;
-    display: block;
-}
-
-.dropdown-content p:hover{
+select option :hover{
     background-color: var(--selection);
     color: var(--textL);
     cursor: pointer;
-}
-
-.dropdown-content p:active .dropdown-content{
-    display: none;
 }
