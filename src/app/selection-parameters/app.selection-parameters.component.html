@@ -1,15 +1,15 @@
-<form class="selection">
-	<select class="time btn dropdown-btn selection-time">
+<form class="selection" (ngSubmit)="GetOptions();">
+	<select class="time btn dropdown-btn selection-time"  type="selection" name="time">
 		<option class="dropdown-content" value="0">Time</option>
 		<option class="dropdown-content" value="1">1 minuto</option>
 		<option class="dropdown-content" value="2">2 minutos</option>
 		<option class="dropdown-content" value="3">5 minutos</option>
 	</select>
-	<select class="text btn dropdown-btn selection-text">
+	<select class="text btn dropdown-btn selection-text" type="selection" name="text">
 		<option class="dropdown-content" id="first" value="0">Text</option>
 		<option class="dropdown-content" value="1">Random phrases</option>
 		<option class="dropdown-content" value="2">Random words</option>
 		<option class="dropdown-content" value="3">Lorem impsum</option>
 	</select>
-	<button class="dropdown-btn start">Start</button>
+	<button class="dropdown-btn start" type="submit">Start</button>
 </form>

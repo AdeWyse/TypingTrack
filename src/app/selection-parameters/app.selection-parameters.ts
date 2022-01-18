@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.selection-parameters.component.css']
 })
 export class SelectionParametersComponent {
-    title = 'Selection';
+    GetOptions(){
+        console.log('enviando');
+    }
 }
