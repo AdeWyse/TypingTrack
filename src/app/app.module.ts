@@ -7,6 +7,7 @@ import {SelectionParametersComponent} from "./selection-parameters/app.selection
 import {FormsModule} from "@angular/forms";
 import { TrakingComponent } from './traking/traking.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +17,12 @@ import { TrakingComponent } from './traking/traking.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
