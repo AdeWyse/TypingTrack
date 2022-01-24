@@ -1,3 +1,22 @@
+main{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: 1fr auto 3fr;
+    gap: 2em;
+}
+
+.card-background{
+    display: grid;
+    background-color: var(--card);
+    color: var(--textD);
+    width: 60em;
+    height: 30em;
+    margin-bottom: 5em;
+    box-shadow: 10px 10px 5px 0 var(--headerS);
+    grid-column: 2;
+}
+
 .selection{
     display: grid;
     grid-template-rows: 0.5fr 1fr 1fr;

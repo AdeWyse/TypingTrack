@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SelectionParametersComponent} from "./selection-parameters/app.selection-parameters";
 import {FormsModule} from "@angular/forms";
+import { TrakingComponent } from './traking/traking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelectionParametersComponent
+    SelectionParametersComponent,
+    TrakingComponent
   ],
   imports: [
     BrowserModule,

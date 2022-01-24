@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Typing-Track';
+
+  selectOptions($event: any){
+    var choice = $event;
+  }
+
 }

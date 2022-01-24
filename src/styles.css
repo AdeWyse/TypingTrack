@@ -6,7 +6,7 @@
     --card-interaction: #CBD2D9;
     --textL: #FAFAFA;
     --textD: #1F2926;
-    --selection: #00897B;
+    --selection: #00d0aa;
     --wrong: #DA0000;
     font-family: "Source Code Pro", "Roboto Light";
 }
@@ -42,30 +42,6 @@ a{
     padding: 1em;
 }
 
-main{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: grid;
-    grid-template-columns: 1fr auto 3fr;
-    grid-gap-column: 2em;
-}
-
-.card-background{
-    display: grid;
-    background-color: var(--card);
-    grid-column: 2;
-    color: var(--textD);
-    width: 60em;
-    height: 30em;
-    margin-bottom: 5em;
-    box-shadow: 10px 10px 5px 0 var(--headerS);
-}
-
-.card-inside{
-    /* display: grid;
-     grid-template-rows: 1fr 1fr 1fr 1fr;
-     grid-template-columns: 1fr 2fr 1fr 2fr 1fr;*/
-}
 
 .rights{
     text-align: center;
