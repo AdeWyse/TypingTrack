@@ -1,0 +1,42 @@
+.interaction{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-interaction{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 50%;
+}
+
+.aim{
+    background-color: var(--headerS);
+    color: var(--textL);
+    margin-top: 2.5%;
+    margin-bottom: 1.25%;
+}
+
+.target{
+    background-color: var(--card-interaction);
+    margin-top: 1.25%;
+    margin-bottom: 2.5%;
+}
+.aim-text{
+    padding: 0.7em;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.target-text{
+    background-color: var(--card-interaction);
+    font-size: 1.5em;
+    line-height: 1.5em;
+    resize: none;
+    overflow: auto;
+    padding: 0.7em;
+    width: 100%;
+    height: auto;
+}

@@ -14,7 +14,6 @@ export class SelectionParametersComponent {
     time: number = 0;
     type: number = 0;
     GetOptions(){
-        console.log('Enviando');
         var choice = { time: this.time, type: this.type};
         this.whenStart.emit(choice);
         this.router.navigateByUrl('track');

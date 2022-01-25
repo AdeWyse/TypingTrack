@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {settingText} from "./textHandler";
 
 @Component({
   selector: 'app-traking',
@@ -7,9 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TrakingComponent implements OnInit {
   @Input() choice: any;
-  constructor() { }
+
+  textToType: string = 'teste';
+
+  constructor() {}
+
 
   ngOnInit(): void {
+    this.textToType = settingText(1);
   }
 
 }
