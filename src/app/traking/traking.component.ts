@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {settingText} from "./textHandler";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-traking',
@@ -7,15 +6,15 @@ import {settingText} from "./textHandler";
   styleUrls: ['./traking.component.css']
 })
 export class TrakingComponent implements OnInit {
-  @Input() choice: any;
-
-  textToType: string = 'teste';
+  @Input() choiceE: any;
+  @Output() whenDone = new EventEmitter<any>();
 
   constructor() {}
 
 
   ngOnInit(): void {
-    this.textToType = settingText(1);
   }
+
+
 
 }

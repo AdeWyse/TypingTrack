@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Typing-Track';
-
-  selectOptions($event: any){
-    var choice = $event;
+  timeSet!: number;
+  textSet!: number;
+  getOptions($event: any){
+    var choiceE = $event;
+    this.timeSet = $event.time;
+    this.textSet = $event.text;
   }
-
-
 
 }
