@@ -1,6 +1,8 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {LoremIpsum} from "lorem-ipsum";
+import {ComunicationService} from "../../services/comunication.service";
+import {Subscription} from "rxjs";
 
 export function settingTime(select:number){
     var timeSelected;
@@ -75,12 +77,13 @@ export function settingText(select: number){
     styleUrls: ['./app.selection-parameters.component.css']
 })
 
-export class SelectionParametersComponent {
-    constructor(private router: Router) {
+export class SelectionParametersComponent implements OnInit, OnDestroy{
+    constructor(private router: Router, private  data: ComunicationService) {
     }
     @Output() whenStart = new EventEmitter<any>();
     time: number = 0;
     type: number = 0;
+    param: any[] = new Array();
     getOptions(){
         this.decideParameters();
         this.router.navigateByUrl('track');
@@ -90,10 +93,25 @@ export class SelectionParametersComponent {
     decideParameters(){
         var textSet = settingText(parseInt(this.type.toString()));
         var timeSet = settingTime(parseInt(this.time.toString()));
-        var param = { time: timeSet, text: textSet};
-
-        this.whenStart.emit(param);
+        this.param.push(textSet);
+        this.param.push(timeSet);
+        this.newMessage();
     }
 
+    subscription: Subscription = new Subscription;
+    // @ts-ignore
+    message: string;
+
+    ngOnInit(){
+        this.subscription = this.data.curentMessage.subscribe(message => this.message = message);
+    }
+
+    ngOnDestroy(){
+        this.subscription.unsubscribe();
+    }
+
+    newMessage() {
+        this.data.changeMessage(this.param.toString());
+    }
 
 }
