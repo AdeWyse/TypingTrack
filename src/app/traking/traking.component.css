@@ -16,12 +16,13 @@
     background-color: var(--headerS);
     color: var(--textL);
     margin-top: 2.5%;
-    margin-bottom: 1.25%;
+    margin-bottom: 0.5%;
+
 }
 
 .target{
     background-color: var(--card-interaction);
-    margin-top: 1.25%;
+    margin-top: 0.5%;
     margin-bottom: 2.5%;
 }
 .aim-text{
@@ -39,4 +40,15 @@
     padding: 0.7em;
     width: 100%;
     height: auto;
+}
+
+
+.coutdown{
+    text-align: right;
+    height: auto;
+    margin-right: 0;
+    margin-left: 89%;
+    margin-bottom: 0;
+    margin-top: 0;
+
 }

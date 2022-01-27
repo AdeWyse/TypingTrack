@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {EventService} from "./event.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,12 @@ export class AppComponent {
   title = 'Typing-Track';
   timeSet!: number;
   textSet!: number;
-  getOptions($event: any){
-    var choiceE = $event;
-    this.timeSet = $event.time;
-    this.textSet = $event.text;
+
+  constructor(private service: EventService) {
+  }
+
+  selectChoice($event: any){
+    this.service.getOptions($event);
   }
 
 }

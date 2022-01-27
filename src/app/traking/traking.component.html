@@ -2,8 +2,9 @@
 	<section class="card-interaction aim">
 		<p class="aim-text">{{text}}</p>
 	</section>
+	<div class="card-interaction coutdown "><p class="aim-text ">{{timeLeftMin}}:{{secFormated}}</p></div>
 	<section class="card-interaction target">
-		<textarea class="target-text" autofocus spellcheck="false"></textarea>
+		<textarea class="target-text" autofocus spellcheck="false" ng-readonly="isInputOpen"></textarea>
 	</section>
 </div>
 
