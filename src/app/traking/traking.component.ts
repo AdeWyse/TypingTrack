@@ -18,7 +18,11 @@ export class TrakingComponent implements OnInit, OnDestroy {
   secFormated: string = '';
   text: string | undefined;
 
-  isInputOpen: boolean = true;
+  isInputOpen: boolean = false;
+
+  rawInput: string | undefined;
+  wordsCount: number = 0;
+  typos: number = 0;
 
   constructor(private data: ComunicationService) {}
 
@@ -57,6 +61,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
         this.timeLeftSec = 60;
         this.timeLeftMin--;
       }else if (this.timeLeftMin<=0 && this.timeLeftSec<=0){
+        this.isInputOpen = true;
         clearInterval(this.interval);
       }
       if(this.timeLeftSec <10){
@@ -64,15 +69,36 @@ export class TrakingComponent implements OnInit, OnDestroy {
       }else{
         this.secFormated = this.timeLeftSec.toString();
       }
+      this.inputControl();
+
     },1000);
   }
 
   inputControl(){
-    // @ts-ignore
-    if(this.time>2){
-      return false;
-    }
-    return true;
+   // @ts-ignore
+    var control = this.text.split(" ");
+   // @ts-ignore
+    var input = this.rawInput.split(" ");
+   var initialSize: number = 0;
+
+   console.log("Control: ", control, "  Input: ", input);
+
+   // @ts-ignore
+    if(input.length > initialSize){
+     // @ts-ignore
+      var place = input.length - 2;
+      // @ts-ignore
+      if(control[place].normalize() != input[place].normalize()){
+        this.isInputOpen = true;
+        clearInterval(this.interval);
+        this.typos++;
+      }
+
+      this.wordsCount = input.length - this.typos;
+   }
+    console.log(this.wordsCount);
+
+
   }
 
 
