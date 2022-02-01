@@ -87,16 +87,19 @@ export class TrakingComponent implements OnInit, OnDestroy {
       var temp = this.control[i];
       if(this.control[i].normalize() != this.input[i].normalize()){
         if(i==this.input.length-1){
-          this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +'</font>';
+          this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
         }else{
-          this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +'</font>';
+          this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
+
+
         }
       }else{
         this.control[i] = temp;
       }
     }
     var constructed = this.control.toString();
-    this.text = constructed.replace(/(,)/g, " ");
+    this.text = constructed.replace(/,(?!,)/g, " ");
+    console.log(this.text);
 
     }
 
