@@ -27,9 +27,9 @@ export function settingText(select: number){
     var selected;
 
     const phrases = [
-        "Most people understand the importance of protecting their skin from the sun, and how the ultraviolet (UV) radiation can damage skin and eyes over years of exposure. However, many people don’t consider themselves exposed to the sun while driving.", "Most people understand the importance of protecting their skin from the sun, and how the ultraviolet (UV) radiation can damage skin and eyes over years of exposure. However, many people don’t consider themselves exposed to the sun while driving.",
+        "Most people understand the importance of protecting their skin from the sun,  and how the ultraviolet (UV) radiation can damage skin and eyes over years of exposure. However, many people don’t consider themselves exposed to the sun while driving.", "Most people understand the importance of protecting their skin from the sun, and how the ultraviolet (UV) radiation can damage skin and eyes over years of exposure. However, many people don’t consider themselves exposed to the sun while driving.",
         "You may be surprised to learn that, when asked to consider the items they can’t live without, Americans rank toothpaste and their toothbrush almost as important as the internet and cell phones, according to a recent study from Cooper Tires.",
-        "Coping with the cold, dark days of winter can be challenging for humans and it’s also a trial for birds. Our feathered friends have evolved in some ingenious ways to cope with wintry weather.Some species migrate to warmer places, some flock together to share their warmth and if they stay put, many have developed some unique physical characteristics that protect and defend them from the cold.",
+        "Coping with the cold, dark days of winter can be challenging for humans and it’s also a trial for birds. Our feathered friends have evolved in some ingenious ways to cope with wintry weather. Some species migrate to warmer places, some flock together to share their warmth and if they stay put, many have developed some unique physical characteristics that protect and defend them from the cold.",
         "Throughout the years, technology has improved drastically and devices that were unimaginable 50 years ago. And perhaps the most advanced and interesting of society’s technological advancements is robots.",
         "How do the small vintners thrive and compete? Some streamline the number of wines offered; others focus on building their wine clubs and relationships with consumers who purchase direct. One California winery has taken an unconventional approach–creating a values-based partnership with a like-minded winery in another part of the world."
     ];
@@ -67,7 +67,6 @@ export function settingText(select: number){
             selected = "Error: No text chosen.";
             break;
     }
-
     return selected;
 }
 

@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {EventService} from "../event.service";
 import {ComunicationService} from "../../services/comunication.service";
 import {interval, Subscription} from "rxjs";
+import * as _ from "lodash";
+import {forEach, startsWith} from "lodash";
 
 @Component({
   selector: 'app-traking',
@@ -17,12 +19,16 @@ export class TrakingComponent implements OnInit, OnDestroy {
   timeLeftSec: number = 9;
   secFormated: string = '';
   text: string | undefined;
+  backup: string | undefined;
+  control: string[] | undefined;
 
   isInputOpen: boolean = false;
 
   rawInput: string | undefined;
+  input: string[] | undefined;
   wordsCount: number = 0;
   typos: number = 0;
+  typosPos: number[] = new Array();
 
   constructor(private data: ComunicationService) {}
 
@@ -45,6 +51,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
   separateParameters(raw: string){
     this.time = parseInt(raw[raw.length-1]);
     this.text = raw.slice(0, raw.length-2);
+    this.backup = this.text;
     this.timeLeftMin = this.time;
     this.timeLeftSec = (this.time*60)%this.time;
 
@@ -52,16 +59,14 @@ export class TrakingComponent implements OnInit, OnDestroy {
   interval: any;
 
   coutdown(){
-    console.log("here", this.timeLeftMin, this.timeLeftSec);
-
     this.interval = setInterval( ()=> {
-      console.log(this.timeLeftMin, this.timeLeftSec);
       this.timeLeftSec--;
       if(this.timeLeftSec<=0 && this.timeLeftMin>0){
         this.timeLeftSec = 60;
         this.timeLeftMin--;
       }else if (this.timeLeftMin<=0 && this.timeLeftSec<=0){
         this.isInputOpen = true;
+        this.wordCount();
         clearInterval(this.interval);
       }
       if(this.timeLeftSec <10){
@@ -69,37 +74,41 @@ export class TrakingComponent implements OnInit, OnDestroy {
       }else{
         this.secFormated = this.timeLeftSec.toString();
       }
-      this.inputControl();
 
     },1000);
   }
-
   inputControl(){
-   // @ts-ignore
-    var control = this.text.split(" ");
-   // @ts-ignore
-    var input = this.rawInput.split(" ");
-   var initialSize: number = 0;
+    // @ts-ignore
+   this.control = this.backup.split(" ");
+    // @ts-ignore
+    this.input = this.rawInput.split(" ");
 
-   console.log("Control: ", control, "  Input: ", input);
-
-   // @ts-ignore
-    if(input.length > initialSize){
-     // @ts-ignore
-      var place = input.length - 2;
-      // @ts-ignore
-      if(control[place].normalize() != input[place].normalize()){
-        this.isInputOpen = true;
-        clearInterval(this.interval);
-        this.typos++;
+    for(var i = 0; i<this.input.length; i++){
+      var temp = this.control[i];
+      if(this.control[i].normalize() != this.input[i].normalize()){
+        if(i==this.input.length-1){
+          this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +'</font>';
+        }else{
+          this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +'</font>';
+        }
+      }else{
+        this.control[i] = temp;
       }
+    }
+    var constructed = this.control.toString();
+    this.text = constructed.replace(/(,)/g, " ");
 
-      this.wordsCount = input.length - this.typos;
-   }
-    console.log(this.wordsCount);
+    }
 
-
-  }
-
-
+    wordCount(){
+      // @ts-ignore
+      for(var i = 0; i<this.control.length; i++){
+        // @ts-ignore
+        if(this.control[i].startsWith('<font color="red"')){
+            this.typos++;
+        }
+      }
+      // @ts-ignore
+      this.wordsCount = this.input.length - 1 - this.typos;
+    }
 }
