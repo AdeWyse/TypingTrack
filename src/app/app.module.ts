@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import {SelectionParametersComponent} from "./selection-parameters/app.selection-parameters";
 import {FormsModule} from "@angular/forms";
 import { TrakingComponent } from './traking/traking.component';
+import { ReusltsComponent } from './reuslts/reuslts.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectionParametersComponent,
-    TrakingComponent
+    TrakingComponent,
+    ReusltsComponent
   ],
   imports: [
     BrowserModule,

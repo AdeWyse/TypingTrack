@@ -4,6 +4,8 @@ import {ComunicationService} from "../../services/comunication.service";
 import {interval, Subscription} from "rxjs";
 import * as _ from "lodash";
 import {forEach, startsWith} from "lodash";
+// @ts-ignore
+import {exportData, importData} from '../storageHandling';
 
 @Component({
   selector: 'app-traking',
@@ -24,6 +26,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
   isInputOpen: boolean = false;
 
+
   rawInput: string | undefined;
   input: string[] | undefined;
   wordsCount: number = 0;
@@ -40,7 +43,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
   ngOnInit(){
     this.subscription = this.data.curentMessage.subscribe(message => this.message = message);
     this.separateParameters(this.message);
-
     this.coutdown();
   }
 
@@ -90,8 +92,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
           this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
         }else{
           this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
-
-
         }
       }else{
         this.control[i] = temp;
@@ -99,7 +99,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
     }
     var constructed = this.control.toString();
     this.text = constructed.replace(/,(?!,)/g, " ");
-    console.log(this.text);
 
     }
 
@@ -112,6 +111,11 @@ export class TrakingComponent implements OnInit, OnDestroy {
         }
       }
       // @ts-ignore
-      this.wordsCount = this.input.length - 1 - this.typos;
+      this.wordsCount = (this.input.length - 1 - this.typos) / this.time;
+      var date = new Date;
+      var dateString = date.getFullYear() + "-" + (date.getMonth()+1)  +  "-" + date.getDate() + "T"
+          + date.getHours() + ":" + date.getMinutes();
+      exportData(this.wordsCount, dateString);
+
     }
 }
