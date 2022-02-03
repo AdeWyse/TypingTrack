@@ -21,8 +21,30 @@ export class ReusltsComponent implements OnInit {
 
   ngOnInit(): void {
       this.getData();
-   var ctx = document.getElementById("myChart");
-   // @ts-ignore
+      this.grahpicRender();
+
+  }
+
+  getData(){
+      var rawData = importData();
+      this.rawWmp = rawData[0];
+      for(var i = 0; i<rawData[1].length; i++){
+          var temp: string = rawData[1][i];
+          this.rawDate.push(new Date(temp));
+      }
+      this.processData();
+  }
+
+  processData(){
+      for( var i = 0; i < this.rawDate.length; i++){
+          this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
+
+      }
+  }
+
+  grahpicRender(){
+      var ctx = document.getElementById("myChart");
+      // @ts-ignore
       var myCHart =  new Chart(ctx, {type: 'bar',
           data: {
               labels: this.date,
@@ -53,23 +75,6 @@ export class ReusltsComponent implements OnInit {
               }
           }
       });
-  }
-
-  getData(){
-      var rawData = importData();
-      this.rawWmp = rawData[0];
-      for(var i = 0; i<rawData[1].length; i++){
-          var temp: string = rawData[1][i];
-          this.rawDate.push(new Date(temp));
-      }
-      this.processData();
-  }
-
-  processData(){
-      for( var i = 0; i < this.rawDate.length; i++){
-          this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
-
-      }
-  }
+    }
 
 }

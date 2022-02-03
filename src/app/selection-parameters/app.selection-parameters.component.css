@@ -23,40 +23,11 @@
     grid-column: 3;
 }
 
-.start{
-    display: grid;
-    grid-row: 4;
-    grid-column: 2;
-}
-
-.start:hover{
-    background-color: var(--selection);
-    color: var(--textL);
-    cursor: pointer;
-}
-
-.start:active{
-    background-color: var(--background);
-    color: var(--textL);
-}
 
 .first{
     display: none;
 }
-.dropdown-btn{
-    background-color: var(--header);
-    text-align: center;
-    color: var(--textL);
-    font-size: 24px;
-    width: 100%;
-    height: 100%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 0;
-    box-shadow: 2px 2px 5px 0 var(--background);
-    border: none;
-    margin: 0;
-}
+
 select option{
     background-color: var(--card-interaction);
     color: var(--header);

@@ -1,3 +1,19 @@
+.result-card{
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 1em;
+}
+
 #myChart{
     padding: 5%;
+    height: 100%;
+}
+.result-graphic{
+    display:grid;
+    grid-column: 1;
+}
+.result-overview{
+    display: grid;
+    grid-column: 2;
+    padding: 2em;
 }
