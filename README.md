@@ -15,6 +15,7 @@ For this project I'm using:
 * Html
 * CSS
 * Javascipt
+* Chart.js
 
 Information will be added as needed
 
