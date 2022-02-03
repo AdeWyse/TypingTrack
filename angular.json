@@ -30,8 +30,11 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/app/storageHandling.js"
-            ]
+              "src/app/storageHandling.js",
+              "node_modules/chart.js/dist/Chart.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "chart.js"]
           },
           "configurations": {
             "production": {
@@ -99,7 +102,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/app/storageHandling.js"
+              "src/app/storageHandling.js",
+              "node_modules/chart.js/dist/Chart.min.js"
             ]
           }
         }

@@ -7,6 +7,7 @@ import {SelectionParametersComponent} from "./selection-parameters/app.selection
 import {FormsModule} from "@angular/forms";
 import { TrakingComponent } from './traking/traking.component';
 import { ReusltsComponent } from './reuslts/reuslts.component';
+import {NgChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ReusltsComponent } from './reuslts/reuslts.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

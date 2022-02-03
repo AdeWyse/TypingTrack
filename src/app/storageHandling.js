@@ -16,9 +16,11 @@ export function importData() {
          dateStored = [];
          wmpStored = [];
      }
+     var stored = [wmpStored, dateStored];
+     return stored;
  }
 
- export  function exportData(wmp, date){
+ export function exportData(wmp, date){
         importData();
      wmpStored.push(wmp);
      dateStored.push(date);

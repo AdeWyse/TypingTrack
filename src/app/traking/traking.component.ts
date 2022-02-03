@@ -113,8 +113,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
       // @ts-ignore
       this.wordsCount = (this.input.length - 1 - this.typos) / this.time;
       var date = new Date;
-      var dateString = date.getFullYear() + "-" + (date.getMonth()+1)  +  "-" + date.getDate() + "T"
-          + date.getHours() + ":" + date.getMinutes();
+      var dateString = date.toISOString().substr(0, 11) + date.toTimeString().substr(0, 5);
       exportData(this.wordsCount, dateString);
 
     }
