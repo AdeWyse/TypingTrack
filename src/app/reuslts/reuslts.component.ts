@@ -96,7 +96,7 @@ export class ReusltsComponent implements OnInit {
   }
 
   grahpicRender(){
-
+      var ctx = document.getElementById("myChart");
       // @ts-ignore
       var myCHart =  new Chart(ctx, {type: 'bar',
           data: {
