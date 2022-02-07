@@ -14,17 +14,15 @@
     margin-right: 5%;
     width: 90%;
     height: 50%;
+
 }
 
-.aim{
+.aim {
     background-color: var(--headerS);
     color: var(--textL);
     margin-top: 2.5%;
     margin-bottom: 0.5%;
-    display: block;
     overflow: auto;
-
-
 }
 
 .target{
@@ -33,12 +31,10 @@
     margin-bottom: 2.5%;
 }
 .aim-text{
-    display: block;
     padding: 0.5em;
     font-size: 1.3em;
     line-height: 1.3em;
-    vertical-align: top;
-
+    overflow: auto;
 }
 
 .target-text{

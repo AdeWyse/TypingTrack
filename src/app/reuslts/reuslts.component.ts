@@ -44,10 +44,11 @@ export class ReusltsComponent implements OnInit {
       }
       this.typos = this.rawTypos[this.rawWpm.length-1].toString();
       var soma = 0;
-      for (var j = 0; j < this.rawTypos.length; j++){
-            soma+= this.rawTypos[j];
+      for (var j = 0; j < this.rawWpm.length; j++){
+            soma+= this.rawWpm[j];
       }
       this.average = soma / this.rawWpm.length;
+      console.log(soma);
       this.wpm = this.rawWpm[this.rawWpm.length-1].toString();
       this.typos = this.rawTypos[this.rawTypos.length-1].toString();
   }

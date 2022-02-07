@@ -92,3 +92,7 @@ footer{
     font-weight: bold;
     text-align: center;
 }
+
+.card-inside{
+    min-height: 0;
+}

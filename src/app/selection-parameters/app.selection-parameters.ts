@@ -44,7 +44,7 @@ export function settingText(select: number){
             selected = phrases[Math.floor(Math.random() * phrases.length)];
             break;
         case 2:
-            for(var i=0; i<=70;i++){
+            for(var i=0; i<=200;i++){
                 construction.push(words[Math.floor(Math.random() * phrases.length)+1]);
             }
             var constructed = construction.toString();
@@ -53,7 +53,7 @@ export function settingText(select: number){
         case 3:
             var lorem = new LoremIpsum({
                 sentencesPerParagraph: {
-                    max: 8,
+                    max: 10,
                     min: 4
                 },
                 wordsPerSentence: {
@@ -61,7 +61,7 @@ export function settingText(select: number){
                     min: 4
                 }
             });
-            selected = lorem.generateParagraphs(1);
+            selected = lorem.generateParagraphs(5);
             break;
         default:
             selected = "Error: No text chosen.";
