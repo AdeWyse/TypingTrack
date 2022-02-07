@@ -1,19 +1,51 @@
 .result-card{
     display: grid;
-    grid-template-columns: 2fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-gap: 1em;
+    min-height: 100%;
 }
-
 #myChart{
     padding: 5%;
-    height: 100%;
+    height: inherit;
 }
 .result-graphic{
     display:grid;
     grid-column: 1;
+    height: auto;
+    margin-bottom: 0.5em;
 }
 .result-overview{
     display: grid;
     grid-column: 2;
-    padding: 2em;
+    padding: 1em;
+    text-align: center;
+}
+
+.line{
+    margin: 0;
+    padding: 0;
+}
+
+.text-Title{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.text-number{
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0.5em;
+}
+
+.text-text{
+    margin:0.5em;
+}
+
+.returnBig{
+    width: 90%;
+    height: auto;
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2em;
 }

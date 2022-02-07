@@ -12,22 +12,25 @@ import {exportData, importData} from '../storageHandling';
 })
 export class ReusltsComponent implements OnInit {
 
-    rawWmp: number[] = new Array();
+    rawWpm: number[] = new Array();
     rawDate: Date[] = new Array();
+    rawTypos: number[] = new Array();
 
-    wmp: string = '';
+    average: number = 0;
+    typos: string = '';
+    wpm: string = '';
     date: string[] = new Array();
   constructor() { }
 
   ngOnInit(): void {
       this.getData();
       this.grahpicRender();
-
   }
 
   getData(){
       var rawData = importData();
-      this.rawWmp = rawData[0];
+      this.rawWpm = rawData[0];
+      this.rawTypos = rawData[2];
       for(var i = 0; i<rawData[1].length; i++){
           var temp: string = rawData[1][i];
           this.rawDate.push(new Date(temp));
@@ -38,8 +41,15 @@ export class ReusltsComponent implements OnInit {
   processData(){
       for( var i = 0; i < this.rawDate.length; i++){
           this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
-
       }
+      this.typos = this.rawTypos[this.rawWpm.length-1].toString();
+      var soma = 0;
+      for (var j = 0; j < this.rawTypos.length; j++){
+            soma+= this.rawTypos[j];
+      }
+      this.average = soma / this.rawWpm.length;
+      this.wpm = this.rawWpm[this.rawWpm.length-1].toString();
+      this.typos = this.rawTypos[this.rawTypos.length-1].toString();
   }
 
   grahpicRender(){
@@ -50,7 +60,7 @@ export class ReusltsComponent implements OnInit {
               labels: this.date,
               datasets: [{
                   label: 'Words per Minute',
-                  data: this.rawWmp,
+                  data: this.rawWpm,
                   backgroundColor: [
                       'rgba(62, 76, 89, 1)'
                   ],
@@ -68,6 +78,8 @@ export class ReusltsComponent implements OnInit {
               }]
           },
           options: {
+             responsive: true,
+              maintainAspectRatio: false,
               scales: {
                   y: {
                       beginAtZero: true

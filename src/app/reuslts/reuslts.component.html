@@ -1,10 +1,16 @@
 <div class="result-card">
 	<section class="result-graphic">
-		<canvas id="myChart"></canvas>
+			<canvas id="myChart"></canvas>
 	</section>
 	<section class="result-overview">
-		<h2>Reults</h2>
-		<p> Bla bla bla result result result</p>
-		<p>Test test teste teste</p>
+			<h2 class="text-Title">Results</h2>
+		<div class="line"><hr></div>
+		<section>
+			<p class="text-number" >{{wpm}}</p>
+			<p class="text-text">Words per minute with <span style="color: var(--wrong)">{{typos}}</span> typos.</p>
+			<p class="text-text">Your wpm average is:</p>
+			<p class="text-number">{{average | number:'1.0-2'}}</p>
+			<a class="dropdown-btn start returnBig" href="#">Try Again</a>
+		</section>
 	</section>
 </div>
