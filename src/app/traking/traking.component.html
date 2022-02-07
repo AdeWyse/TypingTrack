@@ -4,7 +4,7 @@
 	</div>
 	<div class="card-interaction coutdown "><p class="aim-text ">{{timeLeftMin}}:{{secFormated}}</p></div>
 	<section class="card-interaction target">
-		<textarea class="target-text" spellcheck="false" (input)="inputControl()" [readonly]="isInputOpen" [(ngModel)]="rawInput"></textarea>
+		<textarea  autofocus class="target-text" spellcheck="false" (input)="inputControl()" [readonly]="isInputOpen" [(ngModel)]="rawInput"></textarea>
 	</section>
 </div>
 

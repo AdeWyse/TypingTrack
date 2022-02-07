@@ -45,7 +45,7 @@ export function settingText(select: number){
             break;
         case 2:
             for(var i=0; i<=200;i++){
-                construction.push(words[Math.floor(Math.random() * phrases.length)+1]);
+                construction.push(words[Math.floor(Math.random() * words.length)+1]);
             }
             var constructed = construction.toString();
             selected = constructed.replace(/,/g, " ");

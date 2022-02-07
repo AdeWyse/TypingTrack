@@ -6,6 +6,7 @@ import * as _ from "lodash";
 import {forEach, startsWith} from "lodash";
 // @ts-ignore
 import {exportData, importData} from '../storageHandling';
+import {ReusltsComponent} from "../reuslts/reuslts.component";
 
 @Component({
   selector: 'app-traking',
@@ -70,6 +71,8 @@ export class TrakingComponent implements OnInit, OnDestroy {
         this.isInputOpen = true;
         this.wordCount();
         clearInterval(this.interval);
+        var results = new ReusltsComponent();
+
       }
       if(this.timeLeftSec <10){
         this.secFormated = '0' + this.timeLeftSec.toString();
