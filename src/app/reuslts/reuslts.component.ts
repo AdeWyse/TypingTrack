@@ -24,7 +24,7 @@ export class ReusltsComponent implements OnInit {
 
     average: number = 0;
     typos: string = '';
-    wpm: string = '';
+    wpm: number = 0;
     date: string[] = new Array();
   constructor() {
       this.refresh();
@@ -44,8 +44,9 @@ export class ReusltsComponent implements OnInit {
           this.getData();
       }else{
           this.typos = '0';
-          this.wpm = '0';
+          this.wpm = 0;
       }
+      this.grahpicRender();
   }
   getData(){
       var rawData = importData();
@@ -89,10 +90,10 @@ export class ReusltsComponent implements OnInit {
               this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
           }
       }
-      this.wpm = this.rawWpm[this.rawWpm.length-1].toString();
+      this.wpm = this.rawWpm[this.rawWpm.length-1];
+      console.log(this.wpm);
       this.typos = this.rawTypos[this.rawTypos.length-1].toString();
 
-      this.grahpicRender();
   }
 
   grahpicRender(){
@@ -100,10 +101,10 @@ export class ReusltsComponent implements OnInit {
       // @ts-ignore
       var myCHart =  new Chart(ctx, {type: 'bar',
           data: {
-              labels: this.date,
+              labels: this.date.reverse(),
               datasets: [{
                   label: 'Words per Minute',
-                  data: this.processedWpm,
+                  data: this.processedWpm.reverse(),
                   backgroundColor: [
                       'rgba(62, 76, 89, 1)'
                   ],

@@ -2,8 +2,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {EventService} from "../event.service";
 import {ComunicationService} from "../../services/comunication.service";
 import {interval, Subscription} from "rxjs";
-import * as _ from "lodash";
-import {forEach, startsWith} from "lodash";
+import {Router} from "@angular/router";
 // @ts-ignore
 import {exportData, importData} from '../storageHandling';
 import {ReusltsComponent} from "../reuslts/reuslts.component";
@@ -34,7 +33,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
   typos: number = 0;
   typosPos: number[] = new Array();
 
-  constructor(private data: ComunicationService) {}
+  constructor(private data: ComunicationService, private router: Router) {}
 
 
   subscription: Subscription = new Subscription;
@@ -71,13 +70,15 @@ export class TrakingComponent implements OnInit, OnDestroy {
         this.isInputOpen = true;
         this.wordCount();
         clearInterval(this.interval);
-        var results = new ReusltsComponent();
+        this.router.navigateByUrl('results');
+
 
       }
       if(this.timeLeftSec <10){
         this.secFormated = '0' + this.timeLeftSec.toString();
       }else{
         this.secFormated = this.timeLeftSec.toString();
+
       }
 
     },1000);
