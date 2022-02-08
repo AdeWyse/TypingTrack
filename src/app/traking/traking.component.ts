@@ -25,6 +25,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
   control: string[] | undefined;
 
   isInputOpen: boolean = false;
+  controlPos: number = 0;
 
 
   rawInput: string | undefined;
@@ -71,8 +72,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
         this.wordCount();
         clearInterval(this.interval);
         this.router.navigateByUrl('results');
-
-
       }
       if(this.timeLeftSec <10){
         this.secFormated = '0' + this.timeLeftSec.toString();
@@ -85,24 +84,35 @@ export class TrakingComponent implements OnInit, OnDestroy {
   }
   inputControl(){
     // @ts-ignore
-   this.control = this.backup.split(" ");
+   this.control = this.backup.split(/\s+/);
     // @ts-ignore
-    this.input = this.rawInput.split(" ");
+    this.input = this.rawInput.split(/\s+/);
 
     for(var i = 0; i<this.input.length; i++){
       var temp = this.control[i];
+      if( i > 5){
+        this.control.shift();
+      }
       if(this.control[i].normalize() != this.input[i].normalize()){
         if(i==this.input.length-1){
           this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
+
         }else{
           this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
         }
-      }else{
-        this.control[i] = temp;
       }
+      this.controlPos++;
     }
     var constructed = this.control.toString();
+    if( this.controlPos > 5){
+      var tempo = this.control.shift();
+      // @ts-ignore
+      constructed = tempo.toString();
+    }
+
     this.text = constructed.replace(/,(?!,)/g, " ");
+    console.log(constructed);
+    console.log(this.backup);
 
     }
 

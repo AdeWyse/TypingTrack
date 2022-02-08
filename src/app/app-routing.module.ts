@@ -7,8 +7,8 @@ import {ReusltsComponent} from "./reuslts/reuslts.component";
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: SelectionParametersComponent},
-  {path: 'track', component: TrakingComponent, data: {animation: 'About'}},
-  {path: 'results', component: ReusltsComponent, data: {animation: 'Contact'}}
+  {path: 'track', component: TrakingComponent},
+  {path: 'results', component: ReusltsComponent}
 ];
 
 @NgModule({

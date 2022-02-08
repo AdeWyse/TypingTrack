@@ -89,7 +89,6 @@ export class ReusltsComponent implements OnInit {
           for( var i = 0; i < this.rawWpm.length; i++){
               this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
           }
-
       }
       this.wpm = this.rawWpm[this.rawWpm.length-1];
       this.typos = this.rawTypos[this.rawTypos.length-1].toString();
