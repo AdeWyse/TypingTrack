@@ -77,7 +77,6 @@ export class ReusltsComponent implements OnInit {
       this.processedWpm = new Array;
       this.date = new Array;
       if(this.rawWpm.length>10 ){
-
           var k = this.rawWpm.length;
           for( var h = 0; h < 10; h++){
               this.processedWpm.push(this.rawWpm[k-1]);
@@ -85,13 +84,14 @@ export class ReusltsComponent implements OnInit {
               k--;
           }
       }else{
-          for( var i = 0; i < this.rawDate.length; i++){
-              this.processedWpm = this.rawWpm;
+          this.processedWpm = this.rawWpm;
+
+          for( var i = 0; i < this.rawWpm.length; i++){
               this.date.push(this.rawDate[i].toISOString().substr(5, 2)+ "/" +  this.rawDate[i].toISOString().substr(8, 2));
           }
+
       }
       this.wpm = this.rawWpm[this.rawWpm.length-1];
-      console.log(this.wpm);
       this.typos = this.rawTypos[this.rawTypos.length-1].toString();
 
   }

@@ -121,4 +121,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
       exportData(this.wordsCount, dateString, this.typos);
 
     }
+
+
 }

@@ -1,11 +1,11 @@
 .selection{
     display: grid;
-    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    heigth: 95%;
+    heigth: 100%;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
     grid-gap: 2em;
