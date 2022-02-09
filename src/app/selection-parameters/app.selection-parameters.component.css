@@ -1,6 +1,6 @@
 .selection{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     width: 90%;
     margin-left: 5%;
@@ -13,16 +13,15 @@
 
 .selection-time{
     display: grid;
-    grid-row: 2;
+    grid-row: 1;
     grid-column: 1;
 }
 
 .selection-text{
     display: grid;
-    grid-row: 2;
+    grid-row: 1;
     grid-column: 3;
 }
-
 
 .first{
     display: none;
@@ -42,4 +41,19 @@ select option :hover{
     background-color: var(--selection);
     color: var(--textL);
     cursor: pointer;
+}
+
+.description{
+    margin: 1em 2em 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.selection-text-title{
+    margin-bottom: 0.7em;
+    padding-bottom: 0;
+}
+
+.text{
+    margin-top: 0;
 }

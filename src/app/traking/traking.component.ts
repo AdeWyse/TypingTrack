@@ -25,7 +25,9 @@ export class TrakingComponent implements OnInit, OnDestroy {
   control: string[] | undefined;
 
   isInputOpen: boolean = false;
-  controlPos: number = 0;
+  controlPos: number = 1;
+  j: number = 0;
+  iControl: string| undefined;
 
 
   rawInput: string | undefined;
@@ -90,9 +92,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
     for(var i = 0; i<this.input.length; i++){
       var temp = this.control[i];
-      if( i > 5){
-        this.control.shift();
-      }
       if(this.control[i].normalize() != this.input[i].normalize()){
         if(i==this.input.length-1){
           this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
@@ -101,18 +100,32 @@ export class TrakingComponent implements OnInit, OnDestroy {
           this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
         }
       }
-      this.controlPos++;
-    }
-    var constructed = this.control.toString();
-    if( this.controlPos > 5){
-      var tempo = this.control.shift();
-      // @ts-ignore
-      constructed = tempo.toString();
     }
 
+
+
+    var tempArray;
+    var constructed;
+
+    if( this.input.length > 4){
+      tempArray = this.control.slice(this.controlPos);
+      console.log(this.controlPos);
+      constructed = tempArray.toString();
+      if(this.input[this.j] != this.input[i]){
+        this.controlPos++;
+      }
+
+    }else{
+      constructed = this.control.toString();
+    }
+    if(this.j > this.input.length){
+      this.controlPos--;
+    }
+    this.j = this.input.length;
+
+
+
     this.text = constructed.replace(/,(?!,)/g, " ");
-    console.log(constructed);
-    console.log(this.backup);
 
     }
 

@@ -1,3 +1,5 @@
+<p class="description selection-text-title">Have you ever wanted to know how fast you can type?</p>
+<p class="description text">Just choose time stamp and the type of text you want. The more times you try it the better the results!</p>
 <form class="selection" (ngSubmit)="getOptions();" >
 	<select class="time btn dropdown-btn selection-time"  type="selection" name="time" [(ngModel)]="time">
 		<option class="dropdown-content first" value="0">Time</option>
@@ -7,9 +9,9 @@
 	</select>
 	<select class="text btn dropdown-btn selection-text" type="selection" name="text" [(ngModel)]="type">
 		<option class="dropdown-content first" value="0">Text</option>
-		<option class="dropdown-content" value="1">Random phrases</option>
+		<option class="dropdown-content" value="1">Lorem impsum</option>
 		<option class="dropdown-content" value="2">Random words</option>
-		<option class="dropdown-content" value="3">Lorem impsum</option>
+		<option class="dropdown-content" value="3">Random phrases</option>
 	</select>
 	<button class="dropdown-btn start" type="submit">Start</button>
 </form>
