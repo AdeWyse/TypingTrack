@@ -16,6 +16,7 @@ For this project I'm using:
 * CSS
 * Javascipt
 * Chart.js
+* Crypto-Js
 
 Information will be added as needed
 
