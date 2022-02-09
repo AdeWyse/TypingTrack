@@ -64,6 +64,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
   interval: any;
 
   coutdown(){
+    var delay = false;
     this.interval = setInterval( ()=> {
       this.timeLeftSec--;
       if(this.timeLeftSec<=0 && this.timeLeftMin>0){
@@ -109,7 +110,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
     if( this.input.length > 4){
       tempArray = this.control.slice(this.controlPos);
-      console.log(this.controlPos);
       constructed = tempArray.toString();
       if(this.input[this.j] != this.input[i]){
         this.controlPos++;
