@@ -32,7 +32,7 @@ a{
 }
 
 footer{
-    padding: 2em;
+    padding: 2.1em;
 }
 
 .top{
@@ -62,9 +62,8 @@ footer{
 .rights{
     text-align: center;
     padding-top: 1em;
-    padding-bottom: 1em;
     font-weight: normal;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .dropdown-btn{
@@ -120,4 +119,19 @@ footer{
     margin-top: 2em;
     box-shadow: 10px 10px 5px 0 var(--headerS);
     grid-column: 2;
+}
+
+.text-disclaimer{
+    margin-left: 50%;
+    margin-right: 44%;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--textL);
+    padding-bottom: 1em;
+    margin-bottom: 0.7em;
+}
+
+.text-disclaimer:hover{
+    color: var(--selection);
+    cursor: pointer;
 }

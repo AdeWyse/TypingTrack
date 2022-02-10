@@ -51,6 +51,7 @@
 }
 
 .delete-text{
+    background-color: #DA0000;
     text-align: center;
     font-size: 0.8em;
     color: var(--header);

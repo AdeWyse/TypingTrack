@@ -10,6 +10,7 @@ import { ReusltsComponent } from './reuslts/reuslts.component';
 import {NgChartsModule} from "ng2-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AboutComponent } from './about/about.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AboutComponent } from './about/about.component';
     SelectionParametersComponent,
     TrakingComponent,
     ReusltsComponent,
-    AboutComponent
+    AboutComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,
