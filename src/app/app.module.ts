@@ -9,6 +9,7 @@ import { TrakingComponent } from './traking/traking.component';
 import { ReusltsComponent } from './reuslts/reuslts.component';
 import {NgChartsModule} from "ng2-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AppComponent,
     SelectionParametersComponent,
     TrakingComponent,
-    ReusltsComponent
+    ReusltsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

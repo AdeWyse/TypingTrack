@@ -36,6 +36,9 @@ footer{
 }
 
 .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     box-shadow: 0 10px 5px 0 var(--headerS);
 }
 
@@ -45,6 +48,16 @@ footer{
     padding: 1em;
 }
 
+.about{
+    margin-right: 5em;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 1.5em;
+}
+
+.about:hover{
+    color: var(--selection);
+}
 
 .rights{
     text-align: center;
@@ -95,4 +108,16 @@ footer{
 
 .card-inside{
     min-height: 0;
+}
+
+.card-background{
+    display: grid;
+    background-color: var(--card);
+    color: var(--textD);
+    width: 60em;
+    height: auto;
+    margin-bottom: 5em;
+    margin-top: 2em;
+    box-shadow: 10px 10px 5px 0 var(--headerS);
+    grid-column: 2;
 }
