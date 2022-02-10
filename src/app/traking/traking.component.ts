@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 // @ts-ignore
 import {exportData, importData} from '../storageHandling';
 import {ReusltsComponent} from "../reuslts/reuslts.component";
+import {settingTexts} from "../textSelection";
 
 @Component({
   selector: 'app-traking',
@@ -55,7 +56,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
   separateParameters(raw: string){
     this.time = parseInt(raw[raw.length-1]);
-    this.text = raw.slice(0, raw.length-2);
+    this.text = settingTexts(parseInt(raw.slice(0,1)));
     this.backup = this.text;
     this.timeLeftMin = this.time;
     this.timeLeftSec = (this.time*60)%this.time;
@@ -93,14 +94,20 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
     for(var i = 0; i<this.input.length; i++){
       var temp = this.control[i];
-      if(this.control[i].normalize() != this.input[i].normalize()){
-        if(i==this.input.length-1){
-          this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
+      if(this.input.length + 2 < this.control.length){
+        if(this.control[i].normalize() != this.input[i].normalize()){
+          if(i==this.input.length-1){
+            this.control[i] = '<font color="#006db0" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
 
-        }else{
-          this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
+          }else{
+            this.control[i] = '<font color="red" xmlns="http://www.w3.org/1999/html">' + temp +',</font>';
+          }
         }
+      }else{
+        var tempoArrr = this.backup
+        this.backup = tempoArrr + " " + settingTexts(parseInt(this.message.slice(0,1)));
       }
+
     }
 
 

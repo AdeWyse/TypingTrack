@@ -8,7 +8,8 @@
     heigth: 100%;
     margin-top: 2.5%;
     margin-bottom: 3em;
-    grid-gap: 2em;
+    grid-column-gap: 2em;
+    grid-row-gap: 1em;
 }
 
 .selection-time{
