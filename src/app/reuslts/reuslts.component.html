@@ -11,7 +11,7 @@
 			<p class="text-text">Your wpm average is:</p>
 			<p class="text-number">{{average | number:'0.0-2'}}</p>
 			<a class="dropdown-btn start returnBig" href="#">Try Again?</a>
-			<a class="delete-text" href="#">clear results</a>
+			<a class="delete-text" role="button" (click)="deleteDataStart();">clear results</a>
 		</section>
 	</section>
 </div>

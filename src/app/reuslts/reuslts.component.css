@@ -55,3 +55,8 @@
     font-size: 0.8em;
     color: var(--header);
 }
+
+.delete-text:hover{
+    color: var(--selection);
+    cursor: pointer;
+}

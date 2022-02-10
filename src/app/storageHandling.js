@@ -52,3 +52,7 @@ export function importData() {
     storage.setItem('date', encryptedDate);
     storage.setItem('typo', encryptedTypos);
  }
+
+ export function deleteData(){
+    storage.clear();
+ }

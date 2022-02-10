@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 // @ts-ignore
-import {importData} from "../storageHandling";
+import {deleteData, importData} from "../storageHandling";
 import {Chart} from 'chart.js';
 import {NgChartsModule} from 'ng2-charts';
 // @ts-ignore
 import {exportData, importData} from '../storageHandling';
 import {clearCanvas} from "chart.js/helpers";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-reuslts',
   templateUrl: './reuslts.component.html',
@@ -26,7 +27,7 @@ export class ReusltsComponent implements OnInit {
     typos: string = '';
     wpm: number = 0;
     date: string[] = new Array();
-  constructor() {
+  constructor(private router: Router) {
       this.refresh();
   }
 
@@ -130,6 +131,11 @@ export class ReusltsComponent implements OnInit {
               }
           }
       });
+    }
+
+    deleteDataStart(){
+      deleteData();
+      this.router.navigateByUrl('home');
     }
 
 }
