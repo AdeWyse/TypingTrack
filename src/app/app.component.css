@@ -6,8 +6,6 @@ main{
     gap: 2em;
 }
 
-
-
 .selection{
     display: grid;
     grid-template-rows: 0.5fr 1fr 1fr;
@@ -110,4 +108,76 @@ main{
 
 .dropdown-content p:active .dropdown-content{
     display: none;
+}
+
+@media screen and (max-width: 480px){
+    .selection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        background-color: darkgrey;
+    }
+
+    .selection-time{
+        display: grid;
+        grid-row: 1;
+    }
+
+    .selection-text{
+        display: grid;
+        grid-row: 2;
+    }
+
+    .start{
+        display: grid;
+        grid-row: 3;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 481px){
+    .selection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        background-color: gray;
+    }
+
+    .selection-time{
+        display: grid;
+        grid-row: 1;
+    }
+
+    .selection-text{
+        display: grid;
+        grid-row: 2;
+    }
+
+    .start{
+        display: grid;
+        grid-row: 3;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 601px){
+    .selection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        background-color: black;
+    }
+
+    .selection-time{
+        display: grid;
+        grid-row: 1;
+    }
+
+    .selection-text{
+        display: grid;
+        grid-row: 2;
+    }
+
+    .start{
+        display: grid;
+        grid-row: 3;
+    }
 }
