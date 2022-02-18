@@ -101,10 +101,10 @@ export class ReusltsComponent implements OnInit {
       // @ts-ignore
       var myCHart =  new Chart(ctx, {type: 'bar',
           data: {
-              labels: this.date.reverse(),
+              labels: this.date,
               datasets: [{
                   label: 'Words per Minute',
-                  data: this.processedWpm.reverse(),
+                  data: this.processedWpm,
                   backgroundColor: [
                       'rgba(62, 76, 89, 1)'
                   ],
