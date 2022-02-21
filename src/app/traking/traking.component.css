@@ -59,3 +59,38 @@
 
 }
 
+@media screen and (max-width: 480px){
+    .coutdown{
+        margin-left: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 481px){
+    .coutdown{
+        margin-left: 85%;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 601px){
+    .coutdown{
+        margin-left: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 701px){
+    .coutdown{
+        margin-left: 85%;
+    }
+}
+
+@media screen and (max-width: 850px) and (min-width: 769px){
+    .coutdown{
+        margin-left: 85%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 851px){
+    .coutdown{
+        margin-left: 85%;
+    }
+}
