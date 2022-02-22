@@ -21,6 +21,4 @@ For this project I'm using:
 * Crypto-Js
 * Adsterra
 
-Information will be added as needed
-
-Very lazy layout prototypes are in the view1 and view2 pngs.
+Information will be added as needed.
