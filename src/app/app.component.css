@@ -110,9 +110,11 @@ main{
 }
 
 .ads{
-    background-color: #DA0000;
-    width: 161px;
-    height: 601px;
+    background-color: var(--card-interaction);
+    color: var(--textD);
+    margin-right: 2em;
+    grid-column: 3;
+    max-width: 200px;
 }
 
 @media screen and (max-width: 480px){
@@ -136,6 +138,11 @@ main{
     .start{
         display: grid;
         grid-row: 3;
+    }
+
+    .ads{
+
+        grid-column: 2;
     }
 }
 
@@ -161,6 +168,10 @@ main{
         display: grid;
         grid-row: 3;
     }
+    .ads{
+
+        grid-column: 2;
+    }
 }
 
 @media screen and (max-width: 700px) and (min-width: 601px){
@@ -184,5 +195,10 @@ main{
     .start{
         display: grid;
         grid-row: 3;
+    }
+
+    .ads{
+        grid-column: 2;
+        width: available;
     }
 }
