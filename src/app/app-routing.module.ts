@@ -8,11 +8,11 @@ import {DisclaimerComponent} from "./disclaimer/disclaimer.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: SelectionParametersComponent},
-  {path: 'track', component: TrakingComponent},
-  {path: 'results', component: ReusltsComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'disclaimer', component: DisclaimerComponent}
+  {path: 'home', component: SelectionParametersComponent},//Home page, responsible for the selection parameters.
+  {path: 'track', component: TrakingComponent},// Tracking page, where the user can type following the displayed text.
+  {path: 'results', component: ReusltsComponent},// Results page, where the user can see it's last result and older results displayed on a graph.
+  {path: 'about', component: AboutComponent},//About page, page explaining how TypingTrack works and why it was built.
+  {path: 'disclaimer', component: DisclaimerComponent}//Disclaimer page, for warnings and security.
 ];
 
 @NgModule({

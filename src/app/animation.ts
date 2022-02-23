@@ -1,3 +1,4 @@
+//Unused animation for pages transition, by in the future....
 import {transition, trigger, query, style, animate, group, animateChild} from '@angular/animations';
 export const slideInAnimation =
     trigger('routeAnimations', [

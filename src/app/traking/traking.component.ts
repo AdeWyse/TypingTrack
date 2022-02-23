@@ -53,7 +53,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
-
+//Gets the raw data received from the selecting component and separates in the appropriated variable.
   separateParameters(raw: string){
     this.time = parseInt(raw[raw.length-1]);
     this.text = settingTexts(parseInt(raw.slice(0,1)));
@@ -63,7 +63,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
   }
   interval: any;
-
+//Controls the time and redirects te page on time 0:00.
   coutdown(){
     var delay = false;
     this.interval = setInterval( ()=> {
@@ -86,6 +86,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
 
     },1000);
   }
+  //Checks the size and spelling of the input. Changes the color and size of the target text accordingly.
   inputControl(){
     // @ts-ignore
    this.control = this.backup.split(/\s+/);
@@ -107,7 +108,6 @@ export class TrakingComponent implements OnInit, OnDestroy {
         var tempoArrr = this.backup
         this.backup = tempoArrr + " " + settingTexts(parseInt(this.message.slice(0,1)));
       }
-
     }
 
 
@@ -135,7 +135,7 @@ export class TrakingComponent implements OnInit, OnDestroy {
     this.text = constructed.replace(/,(?!,)/g, " ");
 
     }
-
+//Counts the typing speed and subtracts the typos. Then exports the result.
     wordCount(){
       // @ts-ignore
       for(var i = 0; i<this.control.length; i++){

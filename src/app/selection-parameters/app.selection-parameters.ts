@@ -41,7 +41,7 @@ export class SelectionParametersComponent implements OnInit, OnDestroy{
         this.router.navigateByUrl('track');
         
     }
-
+    //Gets the input  condenses it and transmits to traking-component.ts.
     decideParameters(){
         var textSet = parseInt(this.type.toString());
         var timeSet = settingTime(parseInt(this.time.toString()));

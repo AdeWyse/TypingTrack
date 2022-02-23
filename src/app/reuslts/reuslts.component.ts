@@ -34,7 +34,7 @@ export class ReusltsComponent implements OnInit {
   ngOnInit(): void {
      this.initialization();
   }
-
+  //Refreshes the variables.
   refresh(){
 
       this.getData();
@@ -49,6 +49,7 @@ export class ReusltsComponent implements OnInit {
       }
       this.grahpicRender();
   }
+  //Gets the results from storageHandling.
   getData(){
       var rawData = importData();
       this.rawWpm = rawData[0];
@@ -67,14 +68,14 @@ export class ReusltsComponent implements OnInit {
       }
       return  soma / data.length;
   }
-
+//Sets the variables responsible for what appears on the screen.
   processData(){
 
       this.typos = this.rawTypos[this.rawWpm.length-1].toString();
 
       this.average = this.calcAverage(this.rawWpm);
 
-      // cutting the rawWpm array to fit better on the chart, taking only the 10 most recent results
+      //Cuts the rawWpm array to fit better on the chart, taking only the 10th most recent results.
       this.processedWpm = new Array;
       this.date = new Array;
       if(this.rawWpm.length>10 ){
@@ -95,7 +96,7 @@ export class ReusltsComponent implements OnInit {
       this.typos = this.rawTypos[this.rawTypos.length-1].toString();
 
   }
-
+//Creates the graphic.
   grahpicRender(){
       var ctx = document.getElementById("myChart");
       // @ts-ignore
@@ -132,7 +133,7 @@ export class ReusltsComponent implements OnInit {
           }
       });
     }
-
+    //Clear he results and redirects to the home page.
     deleteDataStart(){
       deleteData();
       this.router.navigateByUrl('home');

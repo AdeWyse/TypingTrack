@@ -1,5 +1,5 @@
 import {LoremIpsum} from "lorem-ipsum";
-
+//Where the texts are stored and where the selection of which text to be displayed is randomly decided based on the "select" parameter.
 export function settingTexts(select: number){
     var selected;
 
@@ -20,13 +20,16 @@ export function settingTexts(select: number){
             selected = phrases[Math.floor(Math.random() * phrases.length)];
             break;
         case 2:
+            //Creates array with random order for the "random word" option.
             for(var i=0; i<=200;i++){
                 construction.push(words[Math.floor(Math.random() * words.length)+1]);
             }
+            //Constructs the array into a string.
             var constructed = construction.toString();
             selected = constructed.replace(/,/g, " ");
             break;
         case 1:
+            //Generating the Lorem Isum text using the installed generator.
             var lorem = new LoremIpsum({
                 sentencesPerParagraph: {
                     max: 3,
@@ -40,7 +43,7 @@ export function settingTexts(select: number){
             selected = lorem.generateParagraphs(5);
             break;
         default:
-            selected = "Error: No text chosen.";
+            selected = "Error: No text chosen. Please start from the home page www.typingtrack.42.web.io";
             break;
     }
 
