@@ -8,7 +8,6 @@ With multiple runs of the same user on the same browser the data and graphics wi
 
 There's a live version right now. Try it!
 
-**http://www.typingtrack.42web.io/home**
 
 ### Develpment
 For this project I'm using:
