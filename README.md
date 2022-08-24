@@ -18,6 +18,5 @@ For this project I'm using:
 * Javascipt
 * Chart.js
 * Crypto-Js
-* Adsterra
 
 Information will be added as needed.
