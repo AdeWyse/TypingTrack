@@ -12,6 +12,7 @@ There's a live version right now. Try it!
 ### Development
 For this project I'm using:
 * Php Storm
+* Visual Studio Code
 * Angular
 * Html
 * CSS
